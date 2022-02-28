@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $main-font;
+  font-size: $font-size;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}

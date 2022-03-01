@@ -42,9 +42,8 @@ export default function calculator(mathExpString) {
 
   if (numbers.length == 1) {
     return {
-      result: numbers[0],
-      numbers, 
-      operations
+      result: numbers[0], 
+      token
     }
   }
   return

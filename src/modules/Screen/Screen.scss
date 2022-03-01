@@ -1,0 +1,13 @@
+.screen {
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.screen__result {
+  box-sizing: border-box;
+  display: block;
+  height: 30px;
+  padding: 10px;
+  text-align: right;
+}

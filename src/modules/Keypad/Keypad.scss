@@ -1,0 +1,11 @@
+.keypad {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.keypad__line {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+}

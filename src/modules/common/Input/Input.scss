@@ -1,0 +1,10 @@
+@import '../../../variables.scss';
+
+input {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px black;
+  font-size: $font-size;
+  text-align: right;
+  outline: none;
+}

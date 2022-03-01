@@ -1,6 +1,6 @@
 import isNumeric from './isNumeric'
 
-// Определение отрицательных чисел добавишь сюда, но сначала разберись со скобками
+// сюда добавить проценты
 
 export default function tokenCreator(string) {
   let token = []

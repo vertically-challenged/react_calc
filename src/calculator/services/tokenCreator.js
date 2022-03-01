@@ -1,7 +1,5 @@
 import isNumeric from './isNumeric'
 
-// сюда добавить проценты
-
 export default function tokenCreator(string) {
   let token = []
   let currentNumber = ''
@@ -10,9 +8,12 @@ export default function tokenCreator(string) {
   string.split('').forEach((char) => {
     if (isNumeric(char) || (char == '.')) {
       currentNumber = currentNumber + char
-    } else if ((char == '-') && ((token.length == 0) || (token[token.length-1] == '('))) {
+    } else if ((char == '-') && (currentNumber == '') &&((token.length == 0) || (token[token.length-1] == '('))) {
       token.push('0')
       token.push(char)
+    } else if (char == '%') {
+      if (currentNumber != '') token.push(currentNumber)
+      currentNumber = token[token.length - 3] * (token.pop()/100)
     } else {
       if ((char != '(') && (currentNumber != '')) token.push(currentNumber)
       token.push(char)

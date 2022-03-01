@@ -25,7 +25,7 @@ export default function calculator(mathExpString) {
           }
           operations.pop()
         }
-        while ((operations.length > 0) && (operations.length > 0) && (operationPriorities[`${item}`] <= operationPriorities[operations[operations.length - 1]])) {
+        while ((operations.length > 0) && (operationPriorities[`${item}`] <= operationPriorities[operations[operations.length - 1]])) {
           numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
           operations.pop()
         }

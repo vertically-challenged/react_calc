@@ -13,8 +13,8 @@ const Screen = ({expression, setExpression, result}) => {
   const [showAnswer, setShowAnswer] = useState(false)
 
   useEffect(() => {
-    console.log(!isNaN(inputRef.current.value));
-    if (!isNaN(inputRef.current.value)) {
+    // console.log(!isNaN(inputRef.current.value));
+    if (inputRef.current.value == '-' || !isNaN(inputRef.current.value)) {
       setShowAnswer(false)
     } else {
       setShowAnswer(true)

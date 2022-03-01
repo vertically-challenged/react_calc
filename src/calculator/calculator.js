@@ -11,7 +11,7 @@ export default function calculator(mathExpString) {
   token.forEach((item) => {
 
     if (isNumeric(item)) {
-      numbers.push(item)
+      numbers.push(Math.trunc(item*1000))
     } else {
       if (operations.length == 0) { 
         operations.push(item) 
@@ -40,13 +40,10 @@ export default function calculator(mathExpString) {
     operations.pop()
   }
 
-
-
-
-
-
-  return {
-    numbers, 
-    operations
+  if (numbers.length == 1) {
+    return {
+      result: numbers[0]/1000
+    }
   }
+  return
 }

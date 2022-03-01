@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        {console.log(calculator('(0.1 + 0.2)'))}
+        {console.log(calculator('(0.15 + 0.21)'))}
       </div>
     </div>
   );

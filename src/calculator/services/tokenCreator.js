@@ -14,7 +14,7 @@ export default function tokenCreator(string) {
       token.push('0')
       token.push(char)
     } else {
-      if ((char != '(') && (char != ')') && (currentNumber != '')) token.push(currentNumber)
+      if ((char != '(') && (currentNumber != '')) token.push(currentNumber)
       token.push(char)
       currentNumber = ''
     }

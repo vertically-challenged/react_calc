@@ -18,11 +18,19 @@ export default function calculator(mathExpString) {
       } else if (operationPriorities[`${item}`] > operationPriorities[operations[operations.length - 1]]) {
         operations.push(item)
       } else {
-        while ((operations.length > 0) && (operations[operations.length - 1] != '(') && (operationPriorities[`${item}`] <= operationPriorities[operations[operations.length - 1]])) {
+        if (item == ')') {
+          while (operations[operations.length-1] != '(') {
+            numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
+            operations.pop()
+          }
+          operations.pop()
+        }
+        while ((operations.length > 0) && (operations.length > 0) && (operationPriorities[`${item}`] <= operationPriorities[operations[operations.length - 1]])) {
           numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
           operations.pop()
-        } 
+        }
         operations.push(item)
+        if (item == ')') operations.pop()
       }
     }
   })

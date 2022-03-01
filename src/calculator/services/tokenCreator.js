@@ -8,7 +8,7 @@ export default function tokenCreator(string) {
 
   console.log('string: ', string)
   string.split('').forEach((char) => {
-    if (isNumeric(char)) {
+    if (isNumeric(char) || (char == '.')) {
       currentNumber = currentNumber + char
     } else if ((char == '-') && ((token.length == 0) || (token[token.length-1] == '('))) {
       token.push('0')

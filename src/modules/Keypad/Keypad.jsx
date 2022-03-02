@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '../common/Button/Button'
 import Equality from './complexKeys/Equality'
+import ParenthesesLeft from './complexKeys/ParenthesesLeft'
+import ParenthesesRight from './complexKeys/ParenthesesRight';
 import './Keypad.scss'
 
 const Keypad = ({expression, setExpression, result}) => {
@@ -8,7 +10,10 @@ const Keypad = ({expression, setExpression, result}) => {
     <div className='keypad'>
       <div className='keypad__line'>
         <Button onClick={() => setExpression('')} >{'C'}</Button>
-        <Button >{'( )'}</Button>
+      </div>
+      <div className='keypad__line'>
+        <ParenthesesLeft setExpression={setExpression} expression={expression}/>
+        <ParenthesesRight setExpression={setExpression} expression={expression}/>
         <Button onClick={() => setExpression(expression + '%')}>{'%'}</Button>
         <Button onClick={() => setExpression(expression + '/')}>{'/'}</Button>
       </div>
@@ -22,7 +27,7 @@ const Keypad = ({expression, setExpression, result}) => {
         <Button onClick={() => setExpression(expression + '4')}>{'4'}</Button>
         <Button onClick={() => setExpression(expression + '5')}>{'5'}</Button>
         <Button onClick={() => setExpression(expression + '6')}>{'6'}</Button>
-        <Button onClick={() => setExpression(expression + '-')}>{'-'}</Button>
+        <Button onClick={() => setExpression(expression + '-')}>{'–'}</Button>
       </div>
       <div className='keypad__line'>
         <Button onClick={() => setExpression(expression + '1')}>{'1'}</Button>
@@ -31,7 +36,7 @@ const Keypad = ({expression, setExpression, result}) => {
         <Button onClick={() => setExpression(expression + '+')}>{'+'}</Button>
       </div>
       <div className='keypad__line'>
-        <Button >{'#'}</Button>
+        <Button onClick={() => setExpression(expression + '^')}>{'^'}</Button>
         <Button onClick={() => setExpression(expression + '0')}>{'0'}</Button>
         <Button onClick={() => setExpression(expression + '.')}>{'.'}</Button>
         <Equality setExpression={setExpression} result={result}/>

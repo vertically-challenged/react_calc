@@ -5,9 +5,9 @@ const onClickHandler = (setExpression, result) => {
   setExpression(`${result}`)
 }
 
-const Equality = ({setExpression, result}) => {
+const Equality = ({setExpression, result, type}) => {
   return (
-    <Button onClick={()=> {onClickHandler(setExpression, result)}}>{'='}</Button>
+    <Button type={type} onClick={()=> {onClickHandler(setExpression, result)}}>{'='}</Button>
   );
 }
 

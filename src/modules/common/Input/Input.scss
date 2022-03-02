@@ -3,8 +3,10 @@
 input {
   padding: 10px;
   border: none;
-  border-bottom: solid 2px black;
-  font-size: $font-size;
+  background: $color-screen-bg;
+  max-width: 240px;
+  font-size: 24pt;
   text-align: right;
   outline: none;
+  color: $color-font-screen;
 }

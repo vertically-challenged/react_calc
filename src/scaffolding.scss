@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: $main-font;
   font-size: $font-size;
+  color: $color-font-screen
 }
 
 .container {
@@ -13,4 +14,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgb(31, 31, 31);
+}
+
+.calculator {
+  background: $color-keypad-bg;
+  border-radius: 30px;
+  padding: 18px 15px;
 }

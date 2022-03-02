@@ -1,11 +1,21 @@
+@import '../../variables.scss';
+
 .keypad {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background: $color-keypad-bg;
+  border-radius: 30px;
 }
 
 .keypad__line {
   display: flex;
   justify-content: space-around;
   margin-top: 12px;
+}
+
+.keypad__first-line {
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
 }

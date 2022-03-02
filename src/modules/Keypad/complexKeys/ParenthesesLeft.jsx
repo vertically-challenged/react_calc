@@ -13,9 +13,9 @@ const onClickHandler = (setExpression, expression) => {
   }
 }
 
-const ParenthesesLeft = ({setExpression, expression}) => {
+const ParenthesesLeft = ({setExpression, expression, type}) => {
   return (
-    <Button onClick={()=> {onClickHandler(setExpression, expression)}}>{'('}</Button>
+    <Button type={type} onClick={()=> {onClickHandler(setExpression, expression)}}>{'('}</Button>
   );
 }
 

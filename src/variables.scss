@@ -1,2 +1,14 @@
 $main-font: "OpenSans", Arial, Helvetica, sans-serif;
 $font-size: 14pt;
+$font-size-big: 24pt;
+
+$color: rgb(42, 42, 42);
+
+$color-screen-bg: rgb(42, 42, 42); 
+$color-keypad-bg: rgb(70, 70, 70); 
+$color-border: rgb(224, 224, 224);
+$color-font-screen: $color-border; 
+$color-button-I: rgb(110, 81, 0);
+$color-button-II: rgb(211, 163, 32);
+$color-button-III: $color-screen-bg;
+$color-button-IV: rgb(53, 53, 53);

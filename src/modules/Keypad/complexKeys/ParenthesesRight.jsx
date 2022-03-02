@@ -7,9 +7,9 @@ const onClickHandler = (setExpression, expression) => {
     setExpression(expression + ')')
 }
 
-const Parentheses = ({setExpression, expression}) => {
+const Parentheses = ({setExpression, expression, type}) => {
   return (
-    <Button onClick={()=> {onClickHandler(setExpression, expression)}}>{')'}</Button>
+    <Button type={type} onClick={()=> {onClickHandler(setExpression, expression)}}>{')'}</Button>
   );
 }
 

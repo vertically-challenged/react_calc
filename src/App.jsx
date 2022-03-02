@@ -6,7 +6,6 @@ import Screen from './modules/Screen/Screen'
 
 const onThemeToggleHandler = (theme, setTheme) => {
   setTheme(theme == 'theme-dark' ? 'theme-light' : 'theme-dark')
-  console.log(theme);
 }
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
           <Screen expression={expression} setExpression={setExpression} result={result} token={token}/>
           <Keypad expression={expression} setExpression={setExpression} result={result} onThemeToggleHandler={() => {onThemeToggleHandler(theme, setTheme)}}/>
         </div>
-        {console.log(calculator(expression))}
       </div>
     </div>
   );

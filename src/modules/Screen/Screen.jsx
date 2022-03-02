@@ -11,8 +11,9 @@ const Screen = ({expression, setExpression, result, token}) => {
   const [showAnswer, setShowAnswer] = useState(false)
 
   useEffect(() => {
-    if (token && (token[token.length - 1] == '-' || isNaN(token[token.length - 1]))) {
+    if (token && isNaN(token[token.length - 1])) {
       setShowAnswer(false)
+      if (token[token.length - 1] == ')') setShowAnswer(true)
     } else {
       setShowAnswer(true)
       if (token?.length < 3) setShowAnswer(false)

@@ -1,9 +1,9 @@
 import React from 'react'
 import './Toggle.scss'
 
-export default function ThemeToggle() {
+export default function ThemeToggle({onClick}) {
   return (
-    <button className='theme-toggle theme-toggle--off'>
+    <button onClick={onClick} className='theme-toggle'>
       <div></div>
     </button>
   )

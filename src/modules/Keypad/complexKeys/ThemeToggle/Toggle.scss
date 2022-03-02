@@ -19,12 +19,17 @@
   border: solid 2px $color-button-I;
   border-radius: 30px;
   background: $color-button-I;
-}
-
-.theme-toggle--off > div{
   left: -3px;
 }
 
-.theme-toggle--on> div{
-  right: -30px;
+.theme-light {
+  .theme-toggle{
+    background: $color-screen-bg-light;
+  }
+
+  .theme-toggle > div {
+    border: solid 2px $color-button-I-light;
+    background: $color-button-I-light;
+    left: 34px;
+  } 
 }

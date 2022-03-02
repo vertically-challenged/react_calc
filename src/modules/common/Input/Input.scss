@@ -10,3 +10,10 @@ input {
   outline: none;
   color: $color-font-screen;
 }
+
+.theme-light {
+  input {
+    background: $color-screen-bg-light;
+    color: $color-font-screen-light;
+  }
+}

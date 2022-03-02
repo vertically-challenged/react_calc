@@ -2,9 +2,7 @@
 
 .screen {
   padding: 18px;
-  // border: solid 2px black;
   border-radius: 30px;
-
   background: $color-screen-bg;
 }
 
@@ -15,4 +13,10 @@
   padding: 10px;
   text-align: right;
   color: $color-border;
+}
+
+.theme-light {
+  .screen {
+    background: $color-screen-bg-light;
+  }
 }

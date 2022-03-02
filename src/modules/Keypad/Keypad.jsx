@@ -6,12 +6,12 @@ import ParenthesesRight from './complexKeys/ParenthesesRight';
 import ThemeToggle from './complexKeys/ThemeToggle/ThemeToggle'
 import './Keypad.scss'
 
-const Keypad = ({expression, setExpression, result}) => {
+const Keypad = ({expression, setExpression, result, onThemeToggleHandler}) => {
   return (
     <div className='keypad'>
       <div className='keypad__line keypad__first-line'>
         <Button type={'default-button--function'} onClick={() => setExpression('')} >{'C'}</Button>
-        <ThemeToggle/>
+        <ThemeToggle onClick={onThemeToggleHandler}/>
       </div>
       <div className='keypad__line'>
         <ParenthesesLeft type={'default-button--function'} setExpression={setExpression} expression={expression}/>

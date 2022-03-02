@@ -28,3 +28,25 @@
   border: solid 2px $color-button-IV;
 }
 
+.theme-light {
+  .default-button {
+    border: solid 2px $color-button-III-light;
+
+    &:hover {
+      box-shadow: 0 0 5px 2px $color-border-light;
+    }
+  }
+
+  .default-button--function { 
+    color: $color-button-II-light;
+    background: $color-button-III-light;
+    border: solid 2px $color-button-III-light;
+  }
+  
+  .default-button--number { 
+    color: $color-border-light;
+    background: $color-button-IV-light;
+    border: solid 2px $color-button-IV-light;
+  }
+}
+

@@ -19,3 +19,9 @@
   align-items: center;
   padding-left: 10px;
 }
+
+.theme-light {
+  .keypad {
+    background: $color-keypad-bg-light;
+  }
+}

@@ -6,7 +6,8 @@
   box-sizing: border-box;
   font-family: $main-font;
   font-size: $font-size;
-  color: $color-font-screen
+  color: $color-font-screen;
+  transition: .5s;
 }
 
 .container {
@@ -21,4 +22,18 @@
   background: $color-keypad-bg;
   border-radius: 30px;
   padding: 18px 15px;
+}
+
+.theme-light {
+  * {
+    color: $color-font-screen-light;
+  }
+
+  .container {
+    background: $color-container-light;
+  }
+
+  .calculator {
+    background: $color-keypad-bg-light;
+  }
 }

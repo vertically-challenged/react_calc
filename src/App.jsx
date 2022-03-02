@@ -20,7 +20,9 @@ function App() {
   }, [expression])
 
   useEffect(() => {
-    document.querySelector('.App').classList.toggle(theme)
+    const el = document.querySelector('.App');
+    el.classList.add(theme);
+    return () => el.classList.remove(theme);
   }, [theme])
 
   return (

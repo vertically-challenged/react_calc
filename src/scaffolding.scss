@@ -7,7 +7,6 @@
   font-family: $main-font;
   font-size: $font-size;
   color: $color-font-screen;
-  transition: .5s;
 }
 
 .container {
@@ -16,6 +15,10 @@
   justify-content: center;
   align-items: center;
   background: $color-container;
+  transition: .5s;
+  * {
+    transition: .5s;
+  }
 }
 
 .calculator {

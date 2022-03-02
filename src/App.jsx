@@ -21,11 +21,11 @@ function App() {
   }, [expression])
 
   useEffect(() => {
-    document.querySelector('.App').classList.toggle('theme-light')
+    document.querySelector('.App').classList.toggle(theme)
   }, [theme])
 
   return (
-    <div className="App theme-light">
+    <div className="App">
       <div className="container">
         <div className='calculator'>
           <Screen expression={expression} setExpression={setExpression} result={result} token={token}/>

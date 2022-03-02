@@ -1,9 +1,9 @@
 import React from 'react'
 import './Input.scss'
 
-const Input = ({inputRef, className, value, onChange}) => {
+const Input = ({className, value, onChange}) => {
   return (
-    <input ref={inputRef} className={className} type="text" value={value} onChange={onChange}/>
+    <input className={className} type="text" value={value} onChange={onChange}/>
   );
 }
 

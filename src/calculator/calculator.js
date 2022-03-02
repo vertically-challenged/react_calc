@@ -12,6 +12,10 @@ export default function calculator(mathExpString) {
 
     if (isNumeric(item)) {
       numbers.push(item)
+      if ((numbers.length > 2)) {
+        numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
+        operations.pop()
+      }
     } else {
       if (operations.length == 0) { 
         operations.push(item) 

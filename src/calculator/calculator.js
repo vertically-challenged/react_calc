@@ -10,11 +10,6 @@ export default function calculator(mathExpString) {
 
   try {
     token.forEach((item) => {
-
-      console.log('numbers: ', numbers)
-      console.log('operations', operations)
-      console.log('token', token)
-  
       if (isNumeric(item)) {
         numbers.push(item)
         if ((numbers.length > 2) && (operations[operations.length-1] != '(')) {
@@ -50,7 +45,7 @@ export default function calculator(mathExpString) {
     }
   
     if (numbers.length == 1) {
-      if (numbers[0] == Infinity) return
+      if (numbers[0] == Infinity) return { result: 'Ошибка: Деление на 0'}
       return {
         result: numbers[0], 
         token

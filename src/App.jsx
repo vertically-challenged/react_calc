@@ -40,7 +40,7 @@ function App() {
       <div className="container">
         <div className='calculator'>
           <Screen expression={expression} setExpression={setExpression} result={result} token={token}/>
-          <Keypad expression={expression} setExpression={setExpression} result={result} onThemeToggleHandler={() => {onThemeToggleHandler(theme, setTheme)}}/>
+          <Keypad expression={expression} setExpression={setExpression} result={result} onThemeToggleHandler={() => {onThemeToggleHandler(theme, setTheme)}} token={token}/>
         </div>
       </div>
     </div>

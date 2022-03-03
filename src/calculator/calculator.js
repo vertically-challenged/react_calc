@@ -4,54 +4,60 @@ import operationPriorities from './operationPriorities'
 import operationsList from './operationsList'
 
 export default function calculator(mathExpString) {
-  function calculate () {
-    numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
-    operations.pop()
-  }
-
   const numbers = []
   const operations = []
   const token = tokenCreator(mathExpString)
 
-  token.forEach((item) => {
+  try {
+    token.forEach((item) => {
 
-    const lastOperation = operations[operations.length - 1]
-
-    if (isNumeric(item)) {
-      numbers.push(item)
-      if ((numbers.length > 2)) {
-        calculate()
-      }
-    } else {
-      if (operations.length == 0) { 
-        operations.push(item) 
-      } else if (operationPriorities[`${item}`] > operationPriorities[lastOperation]) {
-        operations.push(item)
-      } else {
-        if (item == ')') {
-          while (lastOperation != '(') {
-            calculate()
-          }
+      console.log('numbers: ', numbers)
+      console.log('operations', operations)
+      console.log('token', token)
+  
+      if (isNumeric(item)) {
+        numbers.push(item)
+        if ((numbers.length > 2) && (operations[operations.length-1] != '(')) {
+          numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
           operations.pop()
         }
-        while ((operations.length > 0) && (operationPriorities[`${item}`] <= operationPriorities[lastOperation])) {
-          calculate()
+      } else {
+        if (operations.length == 0) { 
+          operations.push(item) 
+        } else if (item != ')' && operationPriorities[`${item}`] > operationPriorities[operations[operations.length - 1]]) {
+          operations.push(item)
+        } else {
+          if (item == ')') {
+            while (operations[operations.length-1] && operations[operations.length-1] != '(') {
+              numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
+              operations.pop()
+            }
+            operations.pop()
+          }
+          while (operations[operations.length-1] && (operations.length > 0) && (operationPriorities[`${item}`] <= operationPriorities[operations[operations.length - 1]])) {
+            numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
+            operations.pop()
+          }
+          operations.push(item)
+          if (item == ')') operations.pop()
         }
-        operations.push(item)
-        if (item == ')') operations.pop()
+      }
+    })
+  
+    if ((operations.length == 1) && (numbers.length == 2)) {
+      numbers.push(operationsList[operations[operations.length-1]](numbers.pop(), numbers.pop()))
+      operations.pop()
+    }
+  
+    if (numbers.length == 1) {
+      if (numbers[0] == Infinity) return
+      return {
+        result: numbers[0], 
+        token
       }
     }
-  })
-
-  if ((operations.length == 1) && (numbers.length == 2)) {
-    calculate()
-  }
-
-  if (numbers.length == 1) {
-    return {
-      result: numbers[0], 
-      token
-    }
+  } catch (error) {
+    console.log(error)
   }
   return
 }

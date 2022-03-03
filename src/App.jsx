@@ -12,7 +12,8 @@ function App() {
   const [expression, setExpression] = useState('')
   const [result, setResult] = useState(calculator(expression)?.result)
   const [token, setToken] = useState(calculator(expression)?.token)
-  const [theme, setTheme] = useState('theme-dark')
+  const [theme, setTheme] = useState(localStorage.theme)
+  const [delay, setDelay] = useState(false)
 
   useEffect(() => {
     setResult(calculator(expression)?.result)
@@ -21,8 +22,17 @@ function App() {
 
   useEffect(() => {
     const el = document.querySelector('.App');
+
     el.classList.add(theme);
-    return () => el.classList.remove(theme);
+    localStorage.theme=theme
+
+    return () => {
+      el.classList.remove(theme)
+      if (!delay) {
+        el.classList.add('delay')
+        setDelay(true)
+      }
+    };
   }, [theme])
 
   return (

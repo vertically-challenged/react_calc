@@ -15,9 +15,14 @@
   justify-content: center;
   align-items: center;
   background: $color-container;
-  transition: .5s;
-  * {
+}
+
+.delay {
+  .container {
     transition: .5s;
+    * {
+      transition: .5s;
+    }
   }
 }
 

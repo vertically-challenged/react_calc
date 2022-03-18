@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './App.scss'
 import calculator from './calculator/calculator'
 import Keypad from './modules/Keypad/Keypad'
@@ -14,6 +14,7 @@ function App() {
   const [token, setToken] = useState(calculator(expression)?.token)
   const [theme, setTheme] = useState(localStorage.theme)
   const [delay, setDelay] = useState(false)
+  const refApp = useRef(null)
 
   useEffect(() => {
     setResult(calculator(expression)?.result)
@@ -21,22 +22,20 @@ function App() {
   }, [expression])
 
   useEffect(() => {
-    const el = document.querySelector('.App');
-
-    el.classList.add(theme);
-    localStorage.theme=theme
+    refApp.current.classList.add(theme)
+    localStorage.setItem(theme, theme)
 
     return () => {
-      el.classList.remove(theme)
+      refApp.current.classList.remove(theme)
       if (!delay) {
-        el.classList.add('delay')
+        refApp.current.classList.add('delay')
         setDelay(true)
       }
     };
   }, [theme])
 
   return (
-    <div className="App">
+    <div ref={refApp} className="App">
       <div className="container">
         <div className='calculator'>
           <Screen expression={expression} setExpression={setExpression} result={result} token={token}/>

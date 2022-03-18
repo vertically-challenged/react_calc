@@ -18,7 +18,7 @@ const Screen = ({expression, setExpression, result, token}) => {
       setShowAnswer(true)
       if (token?.length < 3) setShowAnswer(false)
     } 
-  })
+  }, [token])
 
   return (
     <div className='screen'>

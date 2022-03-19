@@ -4,7 +4,6 @@ export default function tokenCreator(string) {
   let token = []
   let currentNumber = ''
 
-  // console.log('string: ', string)
   string.split('').forEach((char) => {
     if (isNumeric(char) || (char == '.')) {
       currentNumber = currentNumber + char
@@ -23,6 +22,5 @@ export default function tokenCreator(string) {
 
   if (currentNumber != '') token.push(currentNumber)
   
-  // console.log('token: ', token)
   return token
 }

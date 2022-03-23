@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     refApp.current.classList.add(theme)
-    localStorage.setItem(theme, theme)
+    localStorage.theme = theme
 
     return () => {
       refApp.current.classList.remove(theme)

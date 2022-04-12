@@ -9,6 +9,8 @@
   margin-right: 2rem;
   background: $color-screen-bg;
   cursor: pointer;
+  user-select: none;  
+  -webkit-tap-highlight-color: transparent;
 }
 
 .theme-toggle > div {

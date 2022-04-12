@@ -13,10 +13,15 @@
   &:hover {
     box-shadow: 0 0 5px 2px $color-border;
     opacity: .7;
+    outline: none;
 
     @media (max-width: 450px) {
       box-shadow: none;
     }
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

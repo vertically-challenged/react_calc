@@ -10,6 +10,8 @@
   cursor: pointer;
   font-weight: bold;
 
+  -webkit-tap-highlight-color: none;
+
   &:hover {
     box-shadow: 0 0 5px 2px $color-border;
     opacity: .7;

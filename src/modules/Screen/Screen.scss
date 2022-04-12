@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 .screen {
-  padding: 18px;
+  padding: 1rem;
   border-radius: 30px;
   background: $color-screen-bg;
 }
@@ -9,8 +9,8 @@
 .screen__result {
   box-sizing: border-box;
   display: block;
-  height: 30px;
-  padding: 10px;
+  height: 2rem;
+  padding: 1rem;
   text-align: right;
   color: $color-border;
 }

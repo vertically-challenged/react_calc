@@ -1,6 +1,8 @@
 $main-font: "OpenSans", Arial, Helvetica, sans-serif;
 $font-size: 14pt;
-$font-size-big: 24pt;
+$font-size-1: 16pt;
+$font-size-2: 18pt;
+$font-size-big: $font-size + 10pt;
 
 
 $color-container: rgb(31, 31, 31);

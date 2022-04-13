@@ -10,8 +10,21 @@
   cursor: pointer;
   font-weight: bold;
   user-select: none;  
+  outline: none;
+  transition: .2s;
 
   -webkit-tap-highlight-color: transparent;
+
+  &:active, &:focus {
+    @media (max-width: 450px) {
+      opacity: .7;
+      border: solid 4px $color-button-I;
+      span {
+        opacity: 1;
+        color: $color-button-I;
+      }
+    }
+  }
 
   &:hover {
     box-shadow: 0 0 5px 2px $color-border;
@@ -19,23 +32,24 @@
     outline: none;
 
     @media (max-width: 450px) {
+      opacity: 1;
       box-shadow: none;
     }
-  }
-
-  &:focus {
-    outline: none;
   }
 }
 
 .default-button--function { 
-  color: $color-button-II;
+  span {
+    color: $color-button-II;
+  }
   background: $color-button-III;
   border: solid 2px $color-button-III;
 }
 
 .default-button--number { 
-  color: $color-border;
+  span {
+    color: $color-border;
+  }
   background: $color-button-IV;
   border: solid 2px $color-button-IV;
 }
@@ -46,17 +60,33 @@
 
     &:hover {
       box-shadow: 0 0 5px 2px $color-border-light;
+
+      @media (max-width: 450px) {
+        opacity: 1;
+        box-shadow: none;
+      }
+    }
+
+    &:active, &:focus {
+      @media (max-width: 450px) {
+        opacity: .7;
+        border: solid 4px $color-border-light;
+      }
     }
   }
 
   .default-button--function { 
-    color: $color-button-II-light;
+    span {
+      color: $color-button-II-light;
+    }
     background: $color-button-III-light;
     border: solid 2px $color-button-III-light;
   }
   
   .default-button--number { 
-    color: $color-border-light;
+    span {
+      color: $color-border-light;
+    }
     background: $color-button-IV-light;
     border: solid 2px $color-button-IV-light;
   }

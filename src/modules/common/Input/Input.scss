@@ -9,6 +9,11 @@ input {
   text-align: right;
   outline: none;
   color: $color-font-screen;
+
+  @media (max-width: 450px) {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .theme-light {

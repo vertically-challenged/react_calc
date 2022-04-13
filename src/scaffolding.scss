@@ -46,6 +46,10 @@
   background: $color-keypad-bg;
   border-radius: 30px;
   padding: 1rem .8rem;
+
+  @media (max-width: 450px) {
+    padding: 0;
+  }
 }
 
 .theme-light {

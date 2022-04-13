@@ -14,8 +14,18 @@
   transition: .2s;
 
   -webkit-tap-highlight-color: transparent;
+  &:focus {
+    @media (min-width: 451px) {
+      opacity: .7;
+      border: solid 4px $color-button-I;
+      span {
+        opacity: 1;
+        color: $color-button-I;
+      }
+    }
+  } 
 
-  &:active, &:focus {
+  &:active {
     @media (max-width: 450px) {
       opacity: .7;
       border: solid 4px $color-button-I;
@@ -67,7 +77,14 @@
       }
     }
 
-    &:active, &:focus {
+    &:focus {
+      @media (min-width: 451px) {
+        opacity: .7;
+        border: solid 4px $color-border-light
+      }
+    }
+
+    &:active {
       @media (max-width: 450px) {
         opacity: .7;
         border: solid 4px $color-border-light;
